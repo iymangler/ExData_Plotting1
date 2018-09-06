@@ -1,9 +1,5 @@
 setwd("C:/Mangala/Tech/GitHub/ExData_Plotting1")
 
-#First Plot
-png("plot1.png", width=480, height=480)
-dev.off()
-
 #Read household power consumption data
 pwrcnsmp <- read.table("household_power_consumption.txt",skip=1,sep=";")
 #Name household power consumption data
@@ -16,3 +12,8 @@ hist(as.numeric(as.character(subpwrcnsmp$Global_active_power)),col="red",main="G
 
 # annotating graph
 title(main="Global Active Power")
+
+#Save Plot
+dev.copy(png, file = "plot1.png")
+dev.off()
+

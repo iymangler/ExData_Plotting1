@@ -1,9 +1,5 @@
 setwd("C:/Mangala/Tech/GitHub/ExData_Plotting1")
 
-#First Plot
-png("plot3.png", width=480, height=480)
-dev.off()
-
 #Read household power consumption data
 pwrcnsmp <- read.table("household_power_consumption.txt",skip=1,sep=";")
 #Name household power consumption data
@@ -29,3 +25,6 @@ legend("topright", lty=1, col=c("black","red","blue"),legend=c("Sub_metering_1",
 # annotating graph
 title(main="Energy sub-metering")
 
+#save the plot
+dev.copy(png, file = "plot3.png")
+dev.off()

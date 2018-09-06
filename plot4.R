@@ -1,9 +1,5 @@
 setwd("C:/Mangala/Tech/GitHub/ExData_Plotting1")
 
-#First Plot
-png("plot4.png", width=480, height=480)
-dev.off()
-
 #Read household power consumption data
 pwrcnsmp <- read.table("household_power_consumption.txt",skip=1,sep=";")
 #Name household power consumption data
@@ -32,4 +28,6 @@ with(subpwrcnsmp,{
   plot(subpwrcnsmp$Time,as.numeric(as.character(subpwrcnsmp$Global_reactive_power)),type="l",xlab="datetime",ylab="Global_reactive_power")
 })
 
-
+#Save Plot
+dev.copy(png, file = "plot4.png")
+dev.off()
